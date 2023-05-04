@@ -16,7 +16,9 @@ export default {
     getApi(){
       axios.get(store.apiUrl + store.daySearch + store.apiKey)
       .then(result => {
-        console.log('films',result.data.results)
+        console.log('films results', result.data.results);
+        store.films = result.data.results;
+        console.log('film stored', store.films.length)
       })
     }
   },
