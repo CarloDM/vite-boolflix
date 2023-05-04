@@ -8,6 +8,10 @@
   background-color: rgba(255, 0, 0, 0.212);
   border: 1px solid black;
 }
+.debug2{
+  background-color: rgba(72, 255, 0, 0.212);
+  border: 1px solid black;
+}
 
 body{
   font-family: monospace;

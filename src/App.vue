@@ -23,12 +23,19 @@ export default {
       })
     },
     apiSearch(){
-      axios.get(store.searchpat + store.apiKey  + store.lang + store.searchWord + store.research )
+      axios.get(store.searchMovie + store.apiKey  + store.lang + store.searchWord + store.research )
       .then(result => {
         console.log('films results', result.data.results);
         store.films = result.data.results;
         store.inputSearch = ''
         console.log('film stored', store.films.length)
+      })
+      axios.get(store.searchTv + store.apiKey  + store.lang + store.searchWord + store.research )
+      .then(result => {
+        console.log('tv results', result.data.results);
+        store.tv = result.data.results;
+        store.inputSearch = ''
+        console.log('tv stored', store.tv.length)
       })
     },
   },

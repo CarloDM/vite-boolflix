@@ -28,6 +28,13 @@ export default {
   :vote="card.vote_average"
   :id="card.id"
   />
+  <Card class="debug2" v-for="(card, index) in store.tv" :key='index'
+  :title="card.name"
+  :originTitle="card.original_name"
+  :lang="store.selectedLang"
+  :vote="card.vote_average"
+  :id="card.id"
+  />
 
 </template>
 

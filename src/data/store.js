@@ -5,7 +5,8 @@ export const store = reactive ({
   daySearch : 'https://api.themoviedb.org/3/trending/movie/day?',
   apiKey : 'api_key=d321c7f6f9c8f4981d9b27438164a67b',
 
-  searchpat:'https://api.themoviedb.org/3/search/movie?',
+  searchMovie:'https://api.themoviedb.org/3/search/movie?',
+  searchTv:'https://api.themoviedb.org/3/search/tv?',
   searchWord:'&query=',
   page:'&page=',
   pageNumb: '1',
@@ -15,6 +16,7 @@ export const store = reactive ({
   lang:'&language=it-en',
   selectedLang: 'it' ,
   films:[],
+  tv:[],
   inputSearch: '',
   research :'rest'
 
