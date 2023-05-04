@@ -5,8 +5,8 @@ export default {
   props:{
     title: String,
     originTitle: String,
-    leng: String,
-    vote: String,
+    lang: String,
+    vote: Number,
   },
 
 }
@@ -14,10 +14,10 @@ export default {
 
 <template>
   <div class="card debug">
-    <p>titolo:</p>
-    <p>titolo originale:</p>
-    <p>lingua:</p>
-    <p>voto:</p>
+    <p>titolo: {{ title }}</p>
+    <p>titolo originale: {{ originTitle }}</p>
+    <p>lingua: {{ lang }}</p>
+    <p>voto: {{ vote }}</p>
   </div>
 </template>
 

@@ -30,8 +30,8 @@ export default {
 </script>
 
 <template>
-  <Header/>
-  <Main/>
+  <Header />
+  <Main />
   
 </template>
 
