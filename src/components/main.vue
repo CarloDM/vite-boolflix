@@ -1,11 +1,13 @@
 <script>
 import {store} from '../data/store.js';
 import Card from './card.vue';
+import SearchBar from './searchBar.vue'
 
 export default {
   name: 'Main',
   components:{
     Card,
+    SearchBar,
   },
   data(){
     return{
@@ -16,6 +18,8 @@ export default {
 </script>
 
 <template>
+
+  <SearchBar @cerca="$emit('ricerca')"/>
 
   <Card v-for="(card, index) in store.films" :key='index'
   :title="card.title"
