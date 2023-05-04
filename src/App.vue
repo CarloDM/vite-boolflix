@@ -16,34 +16,30 @@ export default {
     getApi(){
       axios.get(store.daySearch + store.apiKey + store.lang)
       .then(result => {
-        console.log('films results', result.data.results);
         store.films = result.data.results;
-        console.log('film stored', store.films.length)
+        console.log('film stored', store.films.length,store.films )
       })
 
       axios.get(store.daySearchTv + store.apiKey + store.lang)
       .then(result => {
-        console.log('tv results', result.data.results);
         store.tv = result.data.results;
-        console.log('tv stored', store.tv.length)
+        console.log('tv stored', store.tv.length, store.tv)
       })
     },
 
     apiSearch(){
       axios.get(store.searchMovie + store.apiKey  + store.lang + store.searchWord + store.research )
       .then(result => {
-        console.log('films results', result.data.results);
         store.films = result.data.results;
         store.inputSearch = ''
-        console.log('film stored', store.films.length)
+        console.log('film stored', store.films.length, store.films)
       })
-      
+
       axios.get(store.searchTv + store.apiKey  + store.lang + store.searchWord + store.research )
       .then(result => {
-        console.log('tv results', result.data.results);
         store.tv = result.data.results;
         store.inputSearch = ''
-        console.log('tv stored', store.tv.length)
+        console.log('tv stored', store.tv.length, store.tv)
       })
     },
   },
