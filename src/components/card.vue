@@ -17,7 +17,7 @@ export default {
   <div class="card debug">
     <p>titolo: {{ title }}</p>
     <p>titolo originale: {{ originTitle }}</p>
-    <p>lingua: {{ lang }}</p>
+    <p>lingua originale: {{ lang }}</p>
     <p>voto: {{ vote }}</p>
     <p>id:{{ id }}</p>
   </div>

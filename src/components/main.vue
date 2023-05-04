@@ -24,14 +24,14 @@ export default {
   <Card v-for="(card, index) in store.films" :key='index'
   :title="card.title"
   :originTitle="card.original_title"
-  :lang="store.selectedLang"
+  :lang="card.original_language"
   :vote="card.vote_average"
   :id="card.id"
   />
   <Card class="debug2" v-for="(card, index) in store.tv" :key='index'
   :title="card.name"
   :originTitle="card.original_name"
-  :lang="store.selectedLang"
+  :lang="card.original_language"
   :vote="card.vote_average"
   :id="card.id"
   />
