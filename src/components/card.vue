@@ -7,6 +7,7 @@ export default {
     originTitle: String,
     lang: String,
     vote: Number,
+    id: Number,
   },
 
 }
@@ -18,6 +19,7 @@ export default {
     <p>titolo originale: {{ originTitle }}</p>
     <p>lingua: {{ lang }}</p>
     <p>voto: {{ vote }}</p>
+    <p>id:{{ id }}</p>
   </div>
 </template>
 
