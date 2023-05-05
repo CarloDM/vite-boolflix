@@ -36,6 +36,7 @@ export default {
   :id="card.id"
   :poster="card.poster_path"
   />
+  
   <Card class="debug2" v-for="(card, index) in store.tv" :key='index'
   :title="card.name"
   :originTitle="card.original_name"

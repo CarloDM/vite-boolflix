@@ -33,8 +33,8 @@ export default {
 
     <img :src='"https://image.tmdb.org/t/p/w300" + poster' alt="" class="poster">
   </div>
-</template>
 
+</template>
 
 <style lang="scss" scoped>
 img{
