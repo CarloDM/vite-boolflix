@@ -11,7 +11,7 @@ export const store = reactive ({
   searchTv:'https://api.themoviedb.org/3/search/tv?',
   searchWord:'&query=',
 
-  imgUrl : 'https://image.tmdb.org/t/500',
+  // imgUrl : 'https://image.tmdb.org/t/w300',
 
   // getTraslationsUrl : 'https://api.themoviedb.org/3/movie/{movie_id}/translations?api_key=<<api_key>>',
 

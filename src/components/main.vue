@@ -13,6 +13,13 @@ export default {
     return{
       store,
     }
+  },
+  methods:{
+    approximateVote(vote){
+      console.log('approximate Vote')
+      const voteOnFive = (vote / 10) * 5
+      return Math.ceil(voteOnFive) 
+    }
   }
 }
 </script>
@@ -25,7 +32,7 @@ export default {
   :title="card.title"
   :originTitle="card.original_title"
   :lang="card.original_language"
-  :vote="card.vote_average"
+  :vote="approximateVote(card.vote_average)"
   :id="card.id"
   :poster="card.poster_path"
   />
@@ -33,7 +40,7 @@ export default {
   :title="card.name"
   :originTitle="card.original_name"
   :lang="card.original_language"
-  :vote="card.vote_average"
+  :vote="approximateVote(card.vote_average)"
   :id="card.id"
   :poster="card.poster_path"
   />
