@@ -50,7 +50,8 @@ export default {
   position: relative;
   color: white;
   background-color: rgba(20, 20, 20, 0.0);
-  box-shadow: 0px 0px 5px rgba(133, 133, 133, 0.51);
+  box-shadow: 0px 0px 5px rgba(91, 91, 91, 0.9);
+  border-radius: 3px;
   width: 228px;
   height: 342px;
   margin: 10px;
@@ -60,8 +61,8 @@ export default {
     z-index: -1;
   }
   &:hover{
-    background-color: rgba(20, 20, 20, 0.7);
-    box-shadow: 0px 0px 8px rgba(67, 67, 67, 0.955);
+    background-color: rgba(20, 20, 20, 0.8);
+    box-shadow: 0px 0px 8px rgba(133, 133, 133, 0.955);
   }
   &:hover .info{
     opacity: 1;
