@@ -33,15 +33,17 @@ export default {
   :originTitle="card.original_title"
   :lang="card.original_language"
   :vote="approximateVote(card.vote_average)"
+  :description="card.overview"
   :id="card.id"
   :poster="card.poster_path"
   />
-  
+
   <Card class="debug2" v-for="(card, index) in store.tv" :key='index'
   :title="card.name"
   :originTitle="card.original_name"
   :lang="card.original_language"
   :vote="approximateVote(card.vote_average)"
+  :description="card.overview"
   :id="card.id"
   :poster="card.poster_path"
   />
