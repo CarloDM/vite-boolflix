@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/concert-one": "^4.5.9",
+    "@fontsource/special-elite": "^4.5.8",
     "axios": "^1.4.0",
     "vue": "^3.2.47"
   },
