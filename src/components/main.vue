@@ -19,7 +19,7 @@ export default {
 
 <template>
 
-  <SearchBar @cerca="$emit('ricerca')"/>
+  <SearchBar @cerca="$emit('ricerca')" @tranding="$emit('tranding')" />
 
   <Card v-for="(card, index) in store.films" :key='index'
   :title="card.title"

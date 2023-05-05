@@ -17,13 +17,22 @@ export default {
   <div class="card debug">
     <p>titolo: {{ title }}</p>
     <p>titolo originale: {{ originTitle }}</p>
-    <p>lingua originale: {{ lang }}</p>
+
+    <img v-if=" lang == 'en'"
+      src="../assets/en.png" alt="">
+    <img v-if=" lang == 'it'"
+      src="../assets/it.png" alt="">
+    <p v-else > {{ lang }}</p>
+    
     <p>voto: {{ vote }}</p>
     <p>id:{{ id }}</p>
   </div>
 </template>
 
 
-<style>
+<style lang="scss" scoped>
+img{
+  width: 20px;
+}
 
 </style>

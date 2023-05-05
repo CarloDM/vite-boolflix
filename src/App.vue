@@ -13,7 +13,7 @@ export default {
 
 
   methods: {
-    getApi(){
+    getApiTranding(){
       axios.get(store.daySearch + store.apiKey + store.lang)
       .then(result => {
         store.films = result.data.results;
@@ -44,7 +44,7 @@ export default {
     },
   },
   mounted(){
-    this.getApi();
+    this.getApiTranding();
   }
 
 }
@@ -52,7 +52,7 @@ export default {
 
 <template>
   <Header />
-  <Main @ricerca="apiSearch"/>
+  <Main @ricerca="apiSearch" @tranding="getApiTranding"/>
   
 </template>
 
