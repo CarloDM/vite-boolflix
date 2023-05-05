@@ -19,3 +19,9 @@ body{
   font-family: 'Concert One', cursive;
   background-color: $bg-black;
 }
+
+.main_wrapper{
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}

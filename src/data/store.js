@@ -21,7 +21,7 @@ export const store = reactive ({
   films:[],
   tv:[],
 
-  inputSearch: '',
-  research :'rest'
+  inputSearch: 'cerca',
+  research :''
 
 })

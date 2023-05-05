@@ -21,13 +21,29 @@ export default {
 </script>
 
 <template>
-  <input type="text" v-model="store.inputSearch" @keyup.enter="$emit('cerca')" @keyup="search" >
+  <div class="searchBar">
 
-  <button @click="$emit('tranding')">Day Tranding</button>
-  
+    <div class="left">
+      <button  @click="$emit('tranding')">Day Tranding</button>
+    </div>
+
+    <div class="right">
+      <input class="research" type="text" v-model="store.inputSearch" @keyup.enter="$emit('cerca')" @keyup="search" >
+    </div>
+
+  </div>
 </template>
 
 
-<style>
+<style lang="scss" scoped>
+.searchBar{
+  display: flex;
+  justify-content: space-between;
+
+  .research{
+
+    
+  }
+}
 
 </style>

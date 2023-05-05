@@ -31,14 +31,14 @@ export default {
       axios.get(store.searchMovie + store.apiKey  + store.lang + store.searchWord + store.research )
       .then(result => {
         store.films = result.data.results;
-        store.inputSearch = ''
+        // store.inputSearch = ''
         console.log('film stored', store.films.length, store.films)
       })
 
       axios.get(store.searchTv + store.apiKey  + store.lang + store.searchWord + store.research )
       .then(result => {
         store.tv = result.data.results;
-        store.inputSearch = ''
+        // store.inputSearch = ''
         console.log('tv stored', store.tv.length, store.tv)
       })
     },
@@ -51,9 +51,12 @@ export default {
 </script>
 
 <template>
-  <Header />
-  <Main @ricerca="apiSearch" @tranding="getApiTranding"/>
-  
+  <div class="main_wrapper">
+    
+    <Header @ricerca="apiSearch" @tranding="getApiTranding" />
+    <Main />
+    
+  </div>
 </template>
 
 <style lang="scss">
