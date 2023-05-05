@@ -25,8 +25,6 @@ export default {
 
 <template>
   <main>
-
-    <!-- <SearchBar @cerca="$emit('ricerca')" @tranding="$emit('tranding')" /> -->
     <div class="cards_container">
       
       <Card v-for="(card, index) in store.films" :key='index'
@@ -48,8 +46,8 @@ export default {
       :id="card.id"
       :poster="card.poster_path"
       />
+      
     </div> 
-    
   </main>
 </template>
 

@@ -12,9 +12,6 @@ export default {
   methods: {
     search(){
       store.research = store.inputSearch
-      // store.inputSearch = ''
-      console.log('filtro', store.research)
-
     }
   }
 }
@@ -23,13 +20,14 @@ export default {
 <template>
   <div class="searchBar">
 
-    <div class="left">
-      <button  @click="$emit('tranding')">Day Tranding</button>
-    </div>
-
-    <div class="right">
-      <input class="research" type="text" v-model="store.inputSearch" @keyup.enter="$emit('cerca')" @keyup="search" >
-    </div>
+      <div class="left">
+        <button  @click="$emit('tranding')">Day Tranding</button>
+      </div>
+      
+      <div class="right">
+        <input class="research" type="text" 
+        v-model="store.inputSearch" @keyup.enter="$emit('cerca')" @keyup="search" >
+      </div>
 
   </div>
 </template>

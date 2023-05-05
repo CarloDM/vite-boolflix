@@ -16,7 +16,8 @@ export default {
           <img src="../assets/logo-boolflix.png" alt="">
         </div>
         
-        <SearchBar class="SearchBar" @cerca="$emit('ricerca')" @tranding="$emit('tranding')" />
+        <SearchBar class="SearchBar" 
+        @cerca="$emit('ricerca')" @tranding="$emit('tranding')" />
 
     </div>
   </header>
@@ -25,6 +26,7 @@ export default {
 
 <style lang="scss" scoped >
 @use '../scss/var.scss' as *;
+
 header{
   width: 100%;
   height: 50px;
