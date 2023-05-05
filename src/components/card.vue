@@ -25,7 +25,10 @@ export default {
       src="../assets/it.png" alt="">
     <p v-else > {{ lang }}</p>
 
-    <p>voto: {{ vote }}</p>
+    <p>voto: 
+      <span v-for="(star,index) in vote" :key="index" > * </span>
+    </p>
+
     <!-- <p>id:{{ id }}</p> -->
 
     <img :src='"https://image.tmdb.org/t/p/w300" + poster' alt="" class="poster">
@@ -39,6 +42,7 @@ img{
 }
 
 .poster{
+  display: block;
   width: 200px;
 }
 
