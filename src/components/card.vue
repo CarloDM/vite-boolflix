@@ -55,22 +55,22 @@ export default {
   width: 228px;
   height: 342px;
   margin: 10px;
-  transition: all 0.25s ease-out;
+  transition: all 2.25s ease;
   overflow: hidden;
-  &:hover .poster{
-    z-index: -1;
-  }
+
   &:hover{
+    transition: all 0.25s ease-out;
     background-color: rgba(20, 20, 20, 0.8);
     box-shadow: 0px 0px 8px rgba(133, 133, 133, 0.955);
   }
   &:hover .info{
+    transition: all 0.20s ease-out;
     opacity: 1;
   }
   .info{
     padding: 10px;
     opacity: 0;
-    transition: all 0.20s ease-out;
+    transition: all 1.20s ease-out;
     & :nth-child(n + 2) {
       margin-bottom: 10px;
     }
@@ -104,7 +104,7 @@ export default {
     top:0px;
     position: absolute;
     width: 228px;
-    z-index: 0;
+    z-index: -1;
   }
 }
 
