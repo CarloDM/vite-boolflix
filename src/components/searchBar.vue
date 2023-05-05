@@ -22,8 +22,8 @@ export default {
 
 <template>
   <input type="text" v-model="store.inputSearch" @keyup.enter="$emit('cerca')" @keyup="search" >
-  
-  <button @click="$emit('tranding')">Tranding</button>
+
+  <button @click="$emit('tranding')">Day Tranding</button>
   
 </template>
 

@@ -27,6 +27,7 @@ export default {
   :lang="card.original_language"
   :vote="card.vote_average"
   :id="card.id"
+  :poster="card.poster_path"
   />
   <Card class="debug2" v-for="(card, index) in store.tv" :key='index'
   :title="card.name"
@@ -34,6 +35,7 @@ export default {
   :lang="card.original_language"
   :vote="card.vote_average"
   :id="card.id"
+  :poster="card.poster_path"
   />
 
 </template>
