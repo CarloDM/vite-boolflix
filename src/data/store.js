@@ -9,6 +9,10 @@ export const store = reactive ({
 
   searchMovie:'https://api.themoviedb.org/3/search/movie',
   searchIdMovie:'https://api.themoviedb.org/3/movie/',
+
+  searchGenreMovieList:'https://api.themoviedb.org/3/genre/movie/list',
+  searchGenreTvList:'https://api.themoviedb.org/3/genre/tv/list',
+
   searchTv:'https://api.themoviedb.org/3/search/tv',
   searchIdTv:'https://api.themoviedb.org/3/tv/',
   searchWord:'&query=',
@@ -27,9 +31,12 @@ export const store = reactive ({
   tvGeneres:[],
   tvRuntimes:[],
 
+  listGenresMovie:[],
+  listGenresTv:[],
+
   inputSearch: 'cerca',
   research :'',
 
-  pageInfo: 0,
+  pageInfo: 1,
 
 })

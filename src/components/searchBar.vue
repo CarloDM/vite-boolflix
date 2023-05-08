@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-  <div class="searchBar debug">
+  <div class="searchBar">
 
       <div class="left">
         <button  @click="$emit('tranding')">Day Tranding</button>
@@ -46,17 +46,31 @@ export default {
 
 
 <style lang="scss" scoped>
+@use '../scss/var.scss' as *;
 .searchBar{
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  .left{
+    button{
+      color: grey;
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+      &:hover{
+        color: white;
+      }
+    }
+  }
   .right{
     display: flex;
     align-items: center;
 
     .research{
       height: 20px;
+      background-color: $bg-black;
+      color: lightgray;
+      border: none;
     }
 
     .lang{

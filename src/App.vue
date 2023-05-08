@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
 import {store} from './data/store';
-import { logStored,getTranding,getSearch,storeInfo } from './functions/axiosCalls';
+import { logStored,getTranding,getSearch,storeInfo,getList } from './functions/axiosCalls';
 import Header from './components/header.vue';
 import Main from './components/main.vue';
 
@@ -14,11 +14,11 @@ export default {
 
   methods: {
     test(){
+      
     },
 
     TrandingInput(){
       getTranding()
-      // storeInfo()
     },
 
     WordInput(){
@@ -26,6 +26,7 @@ export default {
     },
   },
   mounted(){
+    getList();
     this.TrandingInput();
   },
 
@@ -35,7 +36,7 @@ export default {
 <template>
   <div class="main_wrapper">
 
-      <button @click="test">test</button>
+      <!-- <button @click="test">test</button> -->
       <Header @ricerca="WordInput" @tranding="TrandingInput" />
       <Main />
 

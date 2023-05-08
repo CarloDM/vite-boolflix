@@ -18,7 +18,6 @@ export default {
 
   methods:{
     approximateVote(vote){
-      console.log('approximate Vote')
       const voteOnFive = (vote / 10) * 5
       return Math.ceil(voteOnFive) 
     },
