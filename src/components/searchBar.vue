@@ -29,11 +29,11 @@ export default {
         v-model="store.inputSearch" @keyup.enter="$emit('cerca')" @keyup="search" >
 
         <div class="lang">
-          <img :class="{'active' :store.selectedLang =='it' }" 
+          <img :class="{'active' : store.selectedLang =='it' }" 
           @click="store.selectedLang = 'it'" 
           src="../assets/it.png" alt="">
 
-          <img :class="{'active' :store.selectedLang =='en' }" 
+          <img :class="{'active' : store.selectedLang =='en' }" 
           @click="store.selectedLang = 'en'" 
           src="../assets/en.png" alt="">
         </div>
