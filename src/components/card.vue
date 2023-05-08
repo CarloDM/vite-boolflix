@@ -115,7 +115,7 @@ export default {
     padding: 10px;
     opacity: 0;
     transition: all 1.20s ease-out;
-    & :nth-child(n + 2) :not(li){
+    & :nth-child(n + 2):not(li){
       margin-bottom: 10px;
     }
       .title{
