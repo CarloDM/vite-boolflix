@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
 import {store} from './data/store';
-import { logStored,getTranding,getSearch } from './functions/axiosCalls';
+import { logStored,getTranding,getSearch,storeInfo } from './functions/axiosCalls';
 import Header from './components/header.vue';
 import Main from './components/main.vue';
 
@@ -18,6 +18,7 @@ export default {
 
     TrandingInput(){
       getTranding()
+      // storeInfo()
     },
 
     WordInput(){

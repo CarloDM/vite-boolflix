@@ -1,6 +1,12 @@
 <script>
+import {store} from '../data/store';
 export default {
   name:'Card',
+  data(){
+    return{
+      store,
+    } 
+  },
 
   props:{
     title: String,
@@ -9,36 +15,73 @@ export default {
     vote: Number,
     description: String,
     id: Number,
+    fIndex: Number,
+    sIndex: Number,
     poster: String,
+    // generes: Array,
   },
+  methods:{
+    saluta(id){
+      if (store.pageInfo > 0){
+        store.pageInfo = 0;
+        console.log('ciao', id, store.pageInfo)
+      }else{
+        store.pageInfo ++;
+        console.log('ciao', id, store.pageInfo)
+      }
+    }
+  }
 
 }
 </script>
 
 <template>
 
-  <div class="card">
+  <div @click="saluta(fIndex)" class="card">
     
 <!-- poster -->
 <img  class="poster" :src='"https://image.tmdb.org/t/p/w342" + poster'>
 
     <div class="info">
+      <div class="page1" :class='{"d_none" : store.pageInfo === 0}' >
+      
       <!-- title -->
-          <p class="title">{{ title }}</p>
-          <p class="origin_title">({{ originTitle }})</p>
+      <p class="title">{{ title }}</p>
+      <p class="origin_title">({{ originTitle }})</p>
       
       <!-- lang -->
-          <img v-if=" lang == 'en'" src="../assets/en.png" alt="">
-          <img v-else-if=" lang == 'it'" src="../assets/it.png" alt="">
-          <p class="lang" v-else > {{ lang }}</p>
-
+      <img v-if=" lang == 'en'" src="../assets/en.png" alt="">
+      <img v-else-if=" lang == 'it'" src="../assets/it.png" alt="">
+      <p class="lang" v-else > {{ lang }}</p>
+      
       <!-- vote -->
-          <p class="vote"> 
-            <span v-for="(star,index) in vote" :key="index" > * </span>
-          </p>
+      <!-- <p class="vote"> 
+        <span v-for="(star,index) in vote" :key="index" > * </span>
+      </p> -->
+      
+      <p class="description">{{ description }}</p>
 
-          <p class="description">{{ description }}</p>
-    </div>
+      </div>
+
+      <div class="page2" :class='{"d_none" : store.pageInfo === 1}' >
+        <ul>
+
+          <li 
+            v-for="(genre,ind) in store.filmsGeneres[fIndex]" :key="ind"
+            class="generes">
+            {{ genre.name }}
+          </li>
+    
+          <li 
+            v-for="(genre,ind) in store.tvGeneres[sIndex]" :key="ind"
+            class="generes">
+            {{ genre.name }}
+          </li>
+
+        </ul>
+      </div>
+
+      </div>
 
   </div>
 
@@ -71,7 +114,7 @@ export default {
     padding: 10px;
     opacity: 0;
     transition: all 1.20s ease-out;
-    & :nth-child(n + 2) {
+    & :nth-child(n + 2) :not(li){
       margin-bottom: 10px;
     }
       .title{
@@ -105,6 +148,9 @@ export default {
     position: absolute;
     width: 228px;
     z-index: -1;
+  }
+  .d_none{
+    display: none;
   }
 }
 

@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import {store} from '../data/store.js';
 import Card from './card.vue';
 
@@ -8,17 +9,19 @@ export default {
   components:{
     Card,
   },
+
   data(){
     return{
       store,
     }
   },
+
   methods:{
     approximateVote(vote){
       console.log('approximate Vote')
       const voteOnFive = (vote / 10) * 5
       return Math.ceil(voteOnFive) 
-    }
+    },
   }
 }
 </script>
@@ -35,6 +38,8 @@ export default {
       :description="card.overview"
       :id="card.id"
       :poster="card.poster_path"
+      :fIndex="index"
+
       />
     
       <Card v-for="(card, index) in store.tv" :key='index'
@@ -45,6 +50,8 @@ export default {
       :description="card.overview"
       :id="card.id"
       :poster="card.poster_path"
+      :sIndex="index"
+
       />
       
     </div> 
