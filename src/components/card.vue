@@ -18,16 +18,15 @@ export default {
     fIndex: Number,
     sIndex: Number,
     poster: String,
-    // generes: Array,
   },
   methods:{
-    saluta(id){
+    nextPage(){
       if (store.pageInfo > 0){
         store.pageInfo = 0;
-        console.log('ciao', id, store.pageInfo)
+        console.log('next', store.pageInfo)
       }else{
         store.pageInfo ++;
-        console.log('ciao', id, store.pageInfo)
+        console.log('next',  store.pageInfo)
       }
     }
   }
@@ -37,7 +36,7 @@ export default {
 
 <template>
 
-  <div @click="saluta(fIndex)" class="card">
+  <div @click="nextPage()" class="card">
     
 <!-- poster -->
 <img  class="poster" :src='"https://image.tmdb.org/t/p/w342" + poster'>
@@ -55,9 +54,9 @@ export default {
       <p class="lang" v-else > {{ lang }}</p>
       
       <!-- vote -->
-      <!-- <p class="vote"> 
-        <span v-for="(star,index) in vote" :key="index" > * </span>
-      </p> -->
+      <p class="vote"> 
+        <span v-if="vote" v-for="(star,index) in vote" :key="index" > * </span>
+      </p>
       
       <p class="description">{{ description }}</p>
 

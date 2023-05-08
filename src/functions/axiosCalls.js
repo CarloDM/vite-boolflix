@@ -13,14 +13,16 @@ function logStored( stored, what) {
 // --------- axios functions----------
 // --------- tranding----------
 function  getTranding(){
+  store.filmsGeneres = [];
+  store.tvGeneres = [];
+  
   axios.get(store.daySearch + store.apiKey + store.lang + store.selectedLang )
   .then(result => {
     store.films = result.data.results;
-    // console.warn(result.data);
   })
   axios.get(store.daySearchTv + store.apiKey + store.lang + store.selectedLang )
   .then(result => {
-    store.tv = result.data;
+    store.tv = result.data.results;
     logStored(store.films, 'film ');
     logStored(store.tv,      'tv ');
     storeInfo()
@@ -28,6 +30,9 @@ function  getTranding(){
 };
 // --------- search word----------
 function  getSearch(){
+  store.filmsGeneres = [];
+  store.tvGeneres = [];
+
   console.log('filtro', store.research)
   axios.get(store.searchMovie + store.apiKey  + store.lang + store.selectedLang  + store.searchWord + store.research )
   .then(result => {
@@ -57,14 +62,18 @@ function  getTvGenres(id){
 };
 
 function storeInfo(){
-  store.filmsGeneres = [];
-  store.tvGeneres = [];
-  store.films.forEach(film => {
-    getFilmsGenres(film.id);
-    console.log('get genere for film', film.id,  store.filmsGeneres);
-  });
-  store.tv.forEach(serie => {
-    getTvGenres(serie.id);
-    console.log('get genere for serie', serie.id,  store.tvGeneres);
-  });
+
+  if (store.films.length > 0) {
+    store.films.forEach(film => {
+      getFilmsGenres(film.id);
+      console.log('get genere for film', film.id,  store.filmsGeneres);
+    });
+  }else{console.log('no films')}
+
+  if (store.tv.length > 0){
+    store.tv.forEach(serie => {
+      getTvGenres(serie.id);
+      console.log('get genere for serie', serie.id,  store.tvGeneres);
+    });
+  }else{console.log('no tv series')}
 }
