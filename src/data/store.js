@@ -15,8 +15,8 @@ export const store = reactive ({
 
   // getTraslationsUrl : 'https://api.themoviedb.org/3/movie/{movie_id}/translations?api_key=<<api_key>>',
 
-  lang:'&language=it-en',
   selectedLang: 'it' ,
+  lang:'&language=',
 
   films:[],
   tv:[],

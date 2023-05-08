@@ -12,11 +12,11 @@ function logStored( stored, what) {
 // --------- axios functions----------
 // --------- tranding----------
 function  getTranding(){
-  axios.get(store.daySearch + store.apiKey + store.lang )
+  axios.get(store.daySearch + store.apiKey + store.lang + store.selectedLang )
   .then(result => {
     store.films = result.data.results;
   })
-  axios.get(store.daySearchTv + store.apiKey + store.lang)
+  axios.get(store.daySearchTv + store.apiKey + store.lang + store.selectedLang )
   .then(result => {
     store.tv = result.data.results;
     logStored(store.films, 'film ');
@@ -26,11 +26,11 @@ function  getTranding(){
 // --------- search word----------
 function  getSearch(){
   console.log('filtro', store.research)
-  axios.get(store.searchMovie + store.apiKey  + store.lang + store.searchWord + store.research )
+  axios.get(store.searchMovie + store.apiKey  + store.lang + store.selectedLang  + store.searchWord + store.research )
   .then(result => {
     store.films = result.data.results;
   })
-  axios.get(store.searchTv + store.apiKey  + store.lang + store.searchWord + store.research )
+  axios.get(store.searchTv + store.apiKey  + store.lang + store.selectedLang  + store.searchWord + store.research )
   .then(result => {
     store.tv = result.data.results;
     logStored(store.films, 'film ');

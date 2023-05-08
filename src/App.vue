@@ -33,14 +33,14 @@ export default {
 
 <template>
   <div class="main_wrapper">
-    <button @click="test">test</button>
-    <Header @ricerca="WordInput" @tranding="TrandingInput" />
-    <Main />
-    
+
+      <button @click="test">test</button>
+      <Header @ricerca="WordInput" @tranding="TrandingInput" />
+      <Main />
+
   </div>
 </template>
 
 <style lang="scss">
 @import './scss/main.scss';
-
 </style>

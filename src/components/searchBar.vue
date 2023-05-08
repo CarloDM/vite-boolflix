@@ -12,13 +12,13 @@ export default {
   methods: {
     search(){
       store.research = store.inputSearch
-    }
+    },
   }
 }
 </script>
 
 <template>
-  <div class="searchBar">
+  <div class="searchBar debug">
 
       <div class="left">
         <button  @click="$emit('tranding')">Day Tranding</button>
@@ -27,7 +27,19 @@ export default {
       <div class="right">
         <input class="research" type="text" 
         v-model="store.inputSearch" @keyup.enter="$emit('cerca')" @keyup="search" >
+
+        <div class="lang">
+          <img :class="{'active' :store.selectedLang =='it' }" 
+          @click="store.selectedLang = 'it'" 
+          src="../assets/it.png" alt="">
+
+          <img :class="{'active' :store.selectedLang =='en' }" 
+          @click="store.selectedLang = 'en'" 
+          src="../assets/en.png" alt="">
+        </div>
       </div>
+
+      
 
   </div>
 </template>
@@ -37,10 +49,30 @@ export default {
 .searchBar{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  .research{
+  .right{
+    display: flex;
+    align-items: center;
 
-    
+    .research{
+      height: 20px;
+    }
+
+    .lang{
+      width: 20px;
+
+      margin-left: 10px;
+      img{
+        width: 90%;
+        &:hover{
+          cursor: pointer;
+        }
+        &.active{
+          border: 1px solid white;
+        }
+      }
+    }
   }
 }
 
