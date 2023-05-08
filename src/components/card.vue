@@ -77,6 +77,8 @@ export default {
             {{ genre.name }}
           </li>
 
+          <span v-if="store.filmsRuntimes[fIndex]">{{ store.filmsRuntimes[fIndex] }} min</span>
+
         </ul>
       </div>
 

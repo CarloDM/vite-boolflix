@@ -8,9 +8,9 @@ export const store = reactive ({
   daySearchTv : 'https://api.themoviedb.org/3/trending/tv/day',
 
   searchMovie:'https://api.themoviedb.org/3/search/movie',
-  searchIdMovie:'https://api.themoviedb.org/3/movie',
+  searchIdMovie:'https://api.themoviedb.org/3/movie/',
   searchTv:'https://api.themoviedb.org/3/search/tv',
-  searchIdTv:'https://api.themoviedb.org/3/tv',
+  searchIdTv:'https://api.themoviedb.org/3/tv/',
   searchWord:'&query=',
 
   // imgUrl : 'https://image.tmdb.org/t/w300',
@@ -22,8 +22,10 @@ export const store = reactive ({
 
   films:[],
   filmsGeneres:[],
+  filmsRuntimes:[],
   tv:[],
   tvGeneres:[],
+  tvRuntimes:[],
 
   inputSearch: 'cerca',
   research :'',

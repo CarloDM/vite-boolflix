@@ -49,15 +49,18 @@ function  getSearch(){
 
 // --------- get generes----------
 function  getFilmsGenres(id){
-  axios.get(store.searchIdMovie + '/' + id + store.apiKey  )
+  axios.get(store.searchIdMovie + id + store.apiKey  )
   .then(result => {
-    store.filmsGeneres.push(result.data.genres)
+    store.filmsGeneres.push(result.data.genres);
+    store.filmsRuntimes.push(result.data.runtime)
+    // console.log(result.data.runtime)
   } )
 };
 function  getTvGenres(id){
-  axios.get(store.searchIdTv + '/' + id + store.apiKey  )
+  axios.get(store.searchIdTv + id + store.apiKey  )
   .then(result => {
     store.tvGeneres.push( result.data.genres )
+    store.tvRuntimes.push( result.data.runtime )
   } )
 };
 
